@@ -43,3 +43,20 @@ Species:
 - Virginica
 
 ---
+## 📁 Project Structure
+
+```
+01_level_task_projects/
+│
+├── data_cleaning_and_EDA.ipynb
+├── iris.csv
+├── README.md
+└── images/
+    ├── scatterplot.png
+    ├── pairplot.png
+    ├── boxplot.png
+    └── correlation_heatmap.png
+```
+
+
+
