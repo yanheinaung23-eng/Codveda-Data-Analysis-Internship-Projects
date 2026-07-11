@@ -59,6 +59,7 @@ Species:
 ├── iris.csv
 ├── README.md
 └── images/
+    ├──mean median mode.png
     ├── scatterplot.png
     ├── pairplot.png
     ├── boxplot.png
