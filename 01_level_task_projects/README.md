@@ -296,4 +296,4 @@ This project demonstrates a complete data analysis workflow from data cleaning t
 
 ---
 
-## ⭐ If you found this project helpful, feel free to star the repository!
+#### ⭐ If you found this project helpful, feel free to star the repository!
