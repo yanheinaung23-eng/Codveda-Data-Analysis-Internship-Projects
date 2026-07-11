@@ -169,6 +169,23 @@ sns.regplot(data=df,
             )
 plt.show()
 ```
+![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/3f03c196cc200ed9003571ef8c65eca399c2f56d/01_level_task_projects/images/petal_length%20vs%20petal_width%20scatterplot.png)
+
+---
+### sepal_length vs sepal_width correlation
+```python
+plt.figure(figsize=(6,5))
+sns.scatterplot(data=df, x="sepal_length", y="sepal_width", hue="species")
+plt.title("Sepal length vs Sepal width Scatterplot")
+sns.regplot(data=df,
+            x= "sepal_length",
+            y="sepal_width",
+            scatter=False,
+            line_kws= {"linestyle": "--"},
+            color = "red" )
+plt.show()
+```
 ![alt image]()
+
 
 
