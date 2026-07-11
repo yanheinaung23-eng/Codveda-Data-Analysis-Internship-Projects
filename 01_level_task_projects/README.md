@@ -171,6 +171,12 @@ plt.show()
 ```
 ![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/3f03c196cc200ed9003571ef8c65eca399c2f56d/01_level_task_projects/images/petal_length%20vs%20petal_width%20scatterplot.png)
 
+**Finding**
+
+* Strong positive relationship
+* Species form clear clusters
+* Petal measurements effectively distinguish flower species
+
 ---
 ### sepal_length vs sepal_width correlation
 ```python
@@ -186,6 +192,12 @@ sns.regplot(data=df,
 plt.show()
 ```
 ![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/974d24ee65b8d58e3b39c0d67283e44b1d02371f/01_level_task_projects/images/sepal_length%20vs%20sepal_width%20scatterplot.png)
+
+**Finding**
+
+- Weaker relationship
+- More overlap between species
+- Less useful for classification
 
 ---
 ### Feature distributions
@@ -215,6 +227,9 @@ axes[1, 1].set_ylabel("cm")
 ```
 ![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/a7d5997442fbfbfd4d6de3060aa9814ef11a7681/01_level_task_projects/images/boxplot.png)
 
+---
+
+### 🔥 Correlation Heatmap
 
 
 
