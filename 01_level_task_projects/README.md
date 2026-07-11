@@ -60,10 +60,11 @@ Species:
 ├── README.md
 └── images/
     ├── mean median mode.png
-    ├── scatterplot.png
+    ├── petal_length vs petal_width scatterplot.png 
+    ├── sepal_length vs sepal_width scatterplot.png
     ├── pairplot.png
     ├── boxplot.png
-    └── correlation_heatmap.png
+    └── correlation heatmap.png
 ```
 ---
 
