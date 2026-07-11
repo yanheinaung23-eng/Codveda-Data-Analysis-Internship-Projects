@@ -17,6 +17,7 @@ Full python code end to end: [Click here.](https://github.com/yanheinaung23-eng/
     * Perform statistical analysis
     * Explore relationships between measurements
     * Distributions and correlations
+3. Insights
 
 ---
 
@@ -152,7 +153,22 @@ display(df_mode)
 ```python
 sns.pairplot(data= df, hue="species", palette="Set2" )
 ```
-![alt image]()
+![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/06c930ad245d3e9c9deaafb8755e321b1c1fde6e/01_level_task_projects/images/pairplot.png)
 
+### petal_length vs petal_width correlation
+```python
+plt.figure(figsize=(6,5))
+sns.scatterplot(data=df, x="petal_length", y="petal_width", hue="species")
+plt.title("Petal length vs Petal width Scatterplot")
+sns.regplot(data=df,
+            x="petal_length",
+            y="petal_width", 
+            scatter=False,
+            color="Red",
+            line_kws={"linestyle" :"--"}  
+            )
+plt.show()
+```
+![alt image]()
 
 
