@@ -185,7 +185,11 @@ sns.regplot(data=df,
             color = "red" )
 plt.show()
 ```
-![alt image]()
+![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/974d24ee65b8d58e3b39c0d67283e44b1d02371f/01_level_task_projects/images/sepal_length%20vs%20sepal_width%20scatterplot.png)
+
+---
+
+
 
 
 
