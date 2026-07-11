@@ -1,8 +1,12 @@
 # 🌸 Iris Dataset Data Cleaning & Exploratory Data Analysis
 
+---
+
 ## 📌 Project Overview
 
 This project demonstrates a complete data cleaning and exploratory data analysis (EDA) workflow using the Iris Dataset. The objective is to inspect data quality, remove duplicate records, generate descriptive statistics, and uncover patterns through visualizations to uncover **insights** and **correlation mathematical patterns**.
+
+---
 
 ## 🎯 Objectives
 
@@ -13,6 +17,8 @@ This project demonstrates a complete data cleaning and exploratory data analysis
     * Explore relationships between flower measurements
     * Distributions and correlations
 
+---
+
 ## 🛠️ Tools & Technologies
 
 * Python
@@ -20,7 +26,9 @@ This project demonstrates a complete data cleaning and exploratory data analysis
 * NumPy
 * Matplotlib
 * Seaborn
-* Jupyter Notebook
+* Visual Studio Code
+
+---
 
 ## 📂 Dataset
 
@@ -57,6 +65,10 @@ Species:
     ├── boxplot.png
     └── correlation_heatmap.png
 ```
+---
 
+## 1. Inspect the dataset
 
+### Structure overview
+   * Used ```python head() 
 
