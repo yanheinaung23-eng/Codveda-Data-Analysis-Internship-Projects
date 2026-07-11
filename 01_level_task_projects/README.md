@@ -12,8 +12,8 @@ This project demonstrates a complete data cleaning and exploratory data analysis
 
 1. Inspect and clean the dataset
 2. EDA
-    * Perform statistical analysis by species
-    * Explore relationships between flower measurements
+    * Perform statistical analysis
+    * Explore relationships between measurements
     * Distributions and correlations
 
 ---
@@ -91,6 +91,23 @@ df.duplicated().sum()
 
 ```python
 df.drop_duplicates(inplace=True)
+```
+## 📊 Exploratory Data Analysis
+
+### Statistical Analysis
+
+Calculated the following metrics grouped by species:
+* Mean
+* Median
+* Mode
+These statistics were compared using bar charts to understand species-level differences.
+
+```python
+# checking means with species
+
+print("Mean values across the dataset by species: ")
+df_mean = df.groupby("species").mean()
+display(df_mean)
 ```
 
 
