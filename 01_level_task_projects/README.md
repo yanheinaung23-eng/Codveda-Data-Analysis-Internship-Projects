@@ -104,14 +104,48 @@ Calculated the following metrics grouped by species:
 * Mode
 These statistics were compared using bar charts to understand species-level differences.
 
+### Means calculation
 ```python
-# checking means with species
-
 print("Mean values across the dataset by species: ")
 df_mean = df.groupby("species").mean()
 display(df_mean)
 ```
+| Species | Avg. Sepal Length | Avg. Sepal Width | Avg. Petal Length | Avg. Petal Width |
+|:---------|------------------:|-----------------:|------------------:|-----------------:|
+| Setosa | 5.010417 | 3.431250 | 1.462500 | 0.250000 |
+| Versicolor | 5.936000 | 2.770000 | 4.260000 | 1.326000 |
+| Virginica | 6.604082 | 2.979592 | 5.561224 | 2.028571 |
 
+---
+### Median calculation
+```python
+print("Median values across the dataset by species: ")
+df_median = df.groupby('species').median()
+display(df_median)
+```
+| Species | Median Sepal Length | Median Sepal Width | Median Petal Length | Median Petal Width |
+|:---------|--------------------:|-------------------:|--------------------:|-------------------:|
+| Setosa | 5.0 | 3.4 | 1.50 | 0.2 |
+| Versicolor | 5.9 | 2.8 | 4.35 | 1.3 |
+| Virginica | 6.5 | 3.0 | 5.60 | 2.0 |
+
+---
+### Mode calculation
+```python
+print("Mode values across the dataset by species: ")
+df_mode = df.groupby("species").agg(lambda x: x.mode().iloc[0])
+display(df_mode)
+```
+*Why use iloc: The .mode() function returns a series because of the potential for ties. Adding .iloc[0] ensures that if a specific feature has a tie within a species, it cleanly selects the first one so your final output remains a neat, easy-to-read table.*
+
+| Species | Mode Sepal Length | Mode Sepal Width | Mode Petal Length | Mode Petal Width |
+|:---------|------------------:|-----------------:|------------------:|-----------------:|
+| Setosa | 5.0 | 3.4 | 1.4 | 0.2 |
+| Versicolor | 5.5 | 3.0 | 4.5 | 1.3 |
+| Virginica | 6.3 | 3.0 | 5.1 | 1.8 |
+
+### Mean, Median, Mode Visualization
+![alt image]()
 
 
 
