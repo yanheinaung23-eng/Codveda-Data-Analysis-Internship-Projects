@@ -5,7 +5,7 @@
 ## 📌 Project Overview
 
 This project demonstrates a complete data cleaning and exploratory data analysis (EDA) workflow using the Iris Dataset. The objective is to inspect data quality, remove duplicate records, generate descriptive statistics, and uncover patterns through visualizations to uncover **insights** and **correlation mathematical patterns**.
-Full python code end to end: [Click here.]()
+Full python code end to end: [Click here.](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/f590f97d0c1c5d0223c40e5fa5011e221f7fe45b/01_level_task_projects/data_cleaning_and_EDA.ipynb)
 ---
 
 ## 🎯 Objectives
