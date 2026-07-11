@@ -188,8 +188,32 @@ plt.show()
 ![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/974d24ee65b8d58e3b39c0d67283e44b1d02371f/01_level_task_projects/images/sepal_length%20vs%20sepal_width%20scatterplot.png)
 
 ---
+### Feature distributions
+Visualize feature distributions with boxplot and identify variability among species.
+```python
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 
+# Sepal Length
+sns.boxplot(data=df, x="species", y="sepal_length", ax=axes[0, 0], palette="Set2")
+axes[0, 0].set_title("Sepal Length Distribution")
+axes[0, 0].set_ylabel("cm")
 
+# Sepal Width
+sns.boxplot(data=df, x="species", y="sepal_width", ax=axes[0, 1], palette="Set2")
+axes[0, 1].set_title("Sepal Width Distribution")
+axes[0, 1].set_ylabel("cm")
+
+# Petal Length
+sns.boxplot(data=df, x="species", y="petal_length", ax=axes[1, 0], palette="Set2")
+axes[1, 0].set_title("Petal Length Distribution")
+axes[1, 0].set_ylabel("cm")
+
+# Petal Width
+sns.boxplot(data=df, x="species", y="petal_width", ax=axes[1, 1], palette="Set2")
+axes[1, 1].set_title("Petal Width Distribution")
+axes[1, 1].set_ylabel("cm")
+```
+![alt image]()
 
 
 
