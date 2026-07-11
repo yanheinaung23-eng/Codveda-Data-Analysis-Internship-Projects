@@ -56,7 +56,7 @@ Species:
 01_level_task_projects/
 │
 ├── data_cleaning_and_EDA.ipynb
-├── iris.csv
+├── 1) iris.csv
 ├── README.md
 └── images/
     ├── mean median mode.png
