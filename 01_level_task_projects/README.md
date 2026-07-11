@@ -150,11 +150,20 @@ display(df_mode)
 
 ---
 ### Explore relationships between measurements
+
+Provides multivariate visualization of all numerical variables.
 ```python
 sns.pairplot(data= df, hue="species", palette="Set2" )
 ```
 ![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/06c930ad245d3e9c9deaafb8755e321b1c1fde6e/01_level_task_projects/images/pairplot.png)
 
+**Key observations:**
+
+* Setosa is clearly separated
+* Virginica and Versicolor overlap slightly
+* Petal measurements provide the strongest separation
+
+---
 ### petal_length vs petal_width correlation
 ```python
 plt.figure(figsize=(6,5))
@@ -171,7 +180,7 @@ plt.show()
 ```
 ![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/3f03c196cc200ed9003571ef8c65eca399c2f56d/01_level_task_projects/images/petal_length%20vs%20petal_width%20scatterplot.png)
 
-**Finding**
+**Findings**
 
 * Strong positive relationship
 * Species form clear clusters
@@ -193,7 +202,7 @@ plt.show()
 ```
 ![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/974d24ee65b8d58e3b39c0d67283e44b1d02371f/01_level_task_projects/images/sepal_length%20vs%20sepal_width%20scatterplot.png)
 
-**Finding**
+**Findings**
 
 - Weaker relationship
 - More overlap between species
@@ -229,8 +238,25 @@ axes[1, 1].set_ylabel("cm")
 
 ---
 
-### 🔥 Correlation Heatmap
+### Correlation Heatmap
+Displays correlations between numerical features.
+```python
+numeric_df = df.drop(columns=["species"])
+correlation_matrix = numeric_df.corr()
 
+plt.figure(figsize=(6,5))
+
+sns.heatmap(data= correlation_matrix, annot=True, cmap="coolwarm")
+plt.title("Correlation headmap")
+plt.show()
+```
+![alt image]()
+
+**Main observations:**
+
+- Petal Length ↔ Petal Width → Strong Positive Correlation
+- Sepal Length ↔ Petal Length → Moderate Positive Correlation
+- Sepal Width → Weak relationship with other variables
 
 
 
