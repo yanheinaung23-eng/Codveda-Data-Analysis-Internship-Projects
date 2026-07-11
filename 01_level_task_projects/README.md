@@ -250,7 +250,7 @@ sns.heatmap(data= correlation_matrix, annot=True, cmap="coolwarm")
 plt.title("Correlation headmap")
 plt.show()
 ```
-![alt image]()
+![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/88c16e5ad8df2c6f462841d3ca5edd239cfae63b/01_level_task_projects/images/correlation%20heatmap.png)
 
 **Main observations:**
 
