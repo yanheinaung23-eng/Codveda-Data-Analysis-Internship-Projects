@@ -10,9 +10,8 @@ This project demonstrates a complete data cleaning and exploratory data analysis
 
 ## 🎯 Objectives
 
-1. Inspect the dataset
-2. Clean the dataset for analysis
-3. EDA
+1. Inspect and clean the dataset
+2. EDA
     * Perform statistical analysis by species
     * Explore relationships between flower measurements
     * Distributions and correlations
@@ -67,8 +66,32 @@ Species:
 ```
 ---
 
-## 1. Inspect the dataset
+## 🔎 1. Inspect and clean the dataset
 
 ### Structure overview
-   * Used ```python head() 
+   * Used ```df.shape```,```df.head()```, ```df.tail()```, ```df.sample(5)``` to confirm **no structure errors**.
+
+### Integrity Check
+   * Used ```df.info()```, ```df.isnull().sum()``` to verify there is **no missing values**.
+
+### Statistical calculations
+   * Used ```df.describe()``` to calculate **means, standard deviation, min and max, quartiles of 25%, 50%, 75%**.
+
+### Remove duplicates
+
+* Checked for duplicate rows using:
+
+```python
+df.duplicated().sum()
+```
+
+* Removed duplicate records to ensure data integrity:
+
+```python
+df.drop_duplicates(inplace=True)
+```
+
+
+
+
 
