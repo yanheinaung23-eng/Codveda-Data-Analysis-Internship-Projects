@@ -213,7 +213,9 @@ sns.boxplot(data=df, x="species", y="petal_width", ax=axes[1, 1], palette="Set2"
 axes[1, 1].set_title("Petal Width Distribution")
 axes[1, 1].set_ylabel("cm")
 ```
-![alt image]()
+![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/a7d5997442fbfbfd4d6de3060aa9814ef11a7681/01_level_task_projects/images/boxplot.png)
+
+
 
 
 
