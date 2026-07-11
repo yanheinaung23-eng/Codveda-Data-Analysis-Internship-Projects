@@ -145,7 +145,7 @@ display(df_mode)
 | Virginica | 6.3 | 3.0 | 5.1 | 1.8 |
 
 ### Mean, Median, Mode Visualization
-![alt image]()
+![alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/7752a3cad1f4c45655b5a3de544436a6d9f05ee2/01_level_task_projects/images/mean%20median%20mode.png)
 
 
 
