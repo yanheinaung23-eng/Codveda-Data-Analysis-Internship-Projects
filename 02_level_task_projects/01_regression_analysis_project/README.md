@@ -168,6 +168,57 @@ plt.title("Linear Regression")
 plt.legend()
 plt.show()
 ```
+![Alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/35d86da85da1cb04b96e70854febd1ff14d4adf7/02_level_task_projects/01_regression_analysis_project/Images/Linear%20Regression%20Actual%20vs%20Predicted.png)
 
+---
 
+## Testing with few new data
+```python
+new_data = [
+    [120.321],
+    [130.234],
+    [140.122],
+    [150.903]
+]
+
+test_pred = model.predict(new_data)
+print(test_pred)
+```
+*120.33257703*
+
+*130.24433293*
+
+*140.13109197*   
+
+*150.91073893*
+
+---
+
+## Finally, Saving the Model!
+```python
+import joblib
+joblib.dump(model, "linear_regression_stock_model.pkl")
+```
+---
+
+We can use this model with following steps:
+```python
+import joblib
+model = joblib.load("linear_regression_stock_model.pkl")
+```
+
+----
+
+## 📊 Results
+
+The Linear Regression model successfully learned the relationship between stock opening prices and closing prices.
+
+The evaluation metrics and visualizations indicate that the model captures the overall price trend while maintaining relatively small prediction errors.
+
+---
+## 👨‍💻 Author
+
+Yan Hein Aung
+
+⭐ If you found this project helpful, feel free to star the repository!
 
