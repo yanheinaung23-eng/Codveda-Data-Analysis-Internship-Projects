@@ -22,7 +22,7 @@ The workflow covers the complete machine learning pipeline, including data prepr
 
 ## 📊 Dataset
 
-The dataset contains historical stock market information including:
+The [dataset](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/f103fc3aa8d4995a2bb723eecf26a977fa7184f3/02_level_task_projects/01_regression_analysis_project/data/2)%20Stock%20Prices%20Data%20Set.csv) contains 490K+ rows of historical stock market information including:
 
 - Date
 - Open Price
