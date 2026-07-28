@@ -5,6 +5,7 @@
 This project performs an exploratory **Time Series Analysis (TSA)** on historical stock prices using Python.
 
 Please check my full python workflow [here](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/e0916ee597f725d833747a6c5d1f619b3f18d5bf/02_level_task_projects/02_time_series_analysis_project/02_time_series_analysis.ipynb). 👈
+
 The analysis focuses on identifying long-term trends, seasonal patterns, and short-term fluctuations through visualization, seasonal decomposition, and moving average smoothing.
 
 ---
