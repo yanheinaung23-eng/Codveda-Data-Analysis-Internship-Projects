@@ -150,6 +150,10 @@ print("RMSE:", np.sqrt(mean_squared_error(y_test, y_pred)))
 
 The trained Linear Regression model can be expressed as:
 
+$$
+y = mx + b
+$$
+
 ```text
 Predicted Close Price = (0.999874 × Open Price) + 0.026678
 ```
