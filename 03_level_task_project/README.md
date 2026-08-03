@@ -416,7 +416,6 @@ joblib.dump(best_rf_model, "customer_churn_prediction_random_forest_model.pkl")
 
 ## Author
 
-Built by **Yan** — Data Analyst / BI professional transitioning into data from a maritime background, with Google Data Analytics, Business Intelligence, and AI certifications.
+Yan Hein Aung
 
-- GitHub: [add your GitHub profile link]
-- LinkedIn: [add your LinkedIn profile link]
+⭐ If you found this project helpful, feel free to star the repository!
