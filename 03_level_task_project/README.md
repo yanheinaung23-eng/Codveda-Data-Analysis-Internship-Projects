@@ -2,6 +2,8 @@
 
 Predicting which telecom customers are about to leave — before they do — using Logistic Regression, Decision Tree, and Random Forest models built with scikit-learn.
 
+Please view the full code in notebook here - [task_5_customer_churn_prediction.ipynb](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/9881435ec268b6163e0bcb62139ce7a3bd7d7c76/03_level_task_project/task_5_customer_churn_prediction.ipynb)
+
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
@@ -45,7 +47,7 @@ This project builds and compares three classification models to predict customer
 
 ## Dataset
 
-The [Orange/BigML Telecom Churn dataset](https://www.kaggle.com/datasets/mnassrib/telecom-churn-datasets) (`churn-bigml-80.csv`) — 2,666 customer records with 20 columns, including:
+The [dataset](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/4d7bf50bda19058f534496970b35947abd6ae56d/03_level_task_project/dataset/churn-bigml-80.csv) (`churn-bigml-80.csv`) — 2,666 customer records with 20 columns, including:
 
 | Category | Columns |
 |---|---|
@@ -131,7 +133,7 @@ df.head()
 
 ### 2. Exploratory Data Analysis
 
-Before touching a single model, the data quality gets checked: row/column types (`.info()`), missing values (`.isna().sum()`), and duplicate rows (`.duplicated().sum()`). Skipping this is how people end up debugging a "bad model" that's actually just bad data. Here, the checks come back clean — 2,666 rows, no nulls, no duplicates — so no imputation logic has to be invented on the spot later.
+Before touching a single model, the data quality gets checked: row/column types (`.info()`), missing values (`.isna().sum()`), and duplicate rows (`.duplicated().sum()`).
 
 ```python
 df.sample(10)
@@ -146,7 +148,7 @@ df.duplicated().sum()
 
 ### 3. Identify Feature Types
 
-Numerical and categorical columns need fundamentally different preprocessing — you scale numbers, you encode categories. Splitting them explicitly here (and separating `X`/`y` first) is what makes the `ColumnTransformer` in the next step possible.
+Numerical and categorical columns need fundamentally different preprocessing — scale numbers, encode categories. Splitting them explicitly here (and separating `X`/`y` first) is what makes the `ColumnTransformer` in the next step possible.
 
 ```python
 # Separate features and target first
@@ -157,19 +159,13 @@ y = df["Churn"]
 categorical_features = X.select_dtypes(include=["object"]).columns
 numerical_features = X.select_dtypes(exclude=["object"]).columns
 
-print("Categorical Columns:")
-print(categorical_features)
-print("Numerical Columns:")
-print(numerical_features)
 ```
 
 ### 4. Build a Reusable Preprocessing Pipeline
 
-Rather than manually scaling and encoding columns by hand (easy to get wrong, easy to apply inconsistently between train and test), the preprocessing is wrapped in a `Pipeline` + `ColumnTransformer`. This has three real benefits:
+Rather than manually scaling and encoding columns by hand (easy to get wrong, easy to apply inconsistently between train and test), the preprocessing is wrapped in a `Pipeline` + `ColumnTransformer`.
 
-- **No data leakage** — the scaler and encoder are fit only on training data, then applied to test data, never the reverse.
-- **One object, three models** — the exact same `preprocessor` is reused for Logistic Regression, Decision Tree, and Random Forest, so any performance difference between models is due to the model, not inconsistent preprocessing.
-- **Production-ready** — a fitted pipeline can be saved and reused on brand-new data with a single `.predict()` call, no manual preprocessing steps to remember.
+- Applied `mean` imputation for numeric columns and `most_frequent` imputation for categorical columns.
 
 ```python
 # Numerical pipeline
@@ -231,6 +227,7 @@ log_model = Pipeline([
 log_model.fit(X_train, y_train)
 log_pred = log_model.predict(X_test)
 ```
+![Alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/1ec6902823cfb17e4d6ff95d3852d0faaa030bd6/03_level_task_project/Images/logistic_regression_report.png)
 
 **Result:** 84.3% accuracy, but only **21.8% recall** — it catches barely 1 in 5 actual churners. For a churn model, that's the metric that matters most, and it's the first sign a linear model isn't capturing what's really going on.
 
@@ -247,6 +244,7 @@ tree_model = Pipeline([
 tree_model.fit(X_train, y_train)
 tree_pred = tree_model.predict(X_test)
 ```
+![Alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/1ec6902823cfb17e4d6ff95d3852d0faaa030bd6/03_level_task_project/Images/decision_tree_report.png)
 
 **Result:** Recall jumps to **68.0%**, confirming the churn signal is non-linear — a big argument in favor of tree-based models for this dataset.
 
@@ -263,6 +261,7 @@ rf_model = Pipeline([
 rf_model.fit(X_train, y_train)
 rf_pred = rf_model.predict(X_test)
 ```
+![Alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/1ec6902823cfb17e4d6ff95d3852d0faaa030bd6/03_level_task_project/Images/random_forest_report.png)
 
 **Result:** Best accuracy and ROC AUC so far (93.3% / 88.3%), but recall actually *drops* to 55.1% — the default Random Forest is playing it safe and missing more churners than the Decision Tree did. This is the trade-off tuning targets next.
 
@@ -289,6 +288,8 @@ best_rf_pred = best_rf_model.predict(X_test)
 ```
 
 **Best parameters:** `class_weight='balanced'`, `max_depth=10`, `min_samples_leaf=2`, `min_samples_split=10`, `n_estimators=300` (mean CV F1: **0.811**)
+
+![Alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/1ec6902823cfb17e4d6ff95d3852d0faaa030bd6/03_level_task_project/Images/tuned_random_forest_report.png)
 
 **Result:** Recall climbs to **73.1%** while accuracy holds steady at 93.3% — the tuned model catches noticeably more real churners without meaningfully sacrificing overall performance. This is the model that gets saved.
 
