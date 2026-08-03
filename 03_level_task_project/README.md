@@ -32,9 +32,6 @@ Please view the full code in notebook here - [task_5_customer_churn_prediction.i
   - [14. Saving the Final Model](#14-saving-the-final-model)
 - [Results Summary](#results-summary)
 - [Business Insights](#business-insights)
-- [How to Run](#how-to-run)
-- [Project Structure](#project-structure)
-- [Future Improvements](#future-improvements)
 - [Author](#author)
 
 ---
@@ -231,6 +228,8 @@ log_pred = log_model.predict(X_test)
 
 **Result:** 84.3% accuracy, but only **21.8% recall** — it catches barely 1 in 5 actual churners. For a churn model, that's the metric that matters most, and it's the first sign a linear model isn't capturing what's really going on.
 
+---
+
 ### 8. Decision Tree Classifier
 
 A Decision Tree can capture non-linear relationships and feature interactions that a linear model can't (e.g. "high day usage *and* many service calls" being riskier than either alone).
@@ -247,6 +246,8 @@ tree_pred = tree_model.predict(X_test)
 ![Alt image](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/1ec6902823cfb17e4d6ff95d3852d0faaa030bd6/03_level_task_project/Images/decision_tree_report.png)
 
 **Result:** Recall jumps to **68.0%**, confirming the churn signal is non-linear — a big argument in favor of tree-based models for this dataset.
+
+---
 
 ### 9. Random Forest Classifier
 
@@ -336,7 +337,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![Top 10 Feature Importance](images/feature_importance.png)
+![Top 10 Feature Importance](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/669f984704ca74594d0d4a071b68e46ce8b48f36/03_level_task_project/Images/feature_importance.png)
 
 ```python
 from sklearn.metrics import ConfusionMatrixDisplay
@@ -350,7 +351,7 @@ plt.ylabel("What actually happened")
 plt.show()
 ```
 
-![Confusion Matrix](images/confusion_matrix.png)
+![Confusion Matrix](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/669f984704ca74594d0d4a071b68e46ce8b48f36/03_level_task_project/Images/confusion_matrix.png)
 
 ```python
 RocCurveDisplay.from_estimator(best_rf_model, X_test, y_test)
@@ -359,7 +360,9 @@ plt.grid(alpha=0.3)
 plt.show()
 ```
 
-![ROC Curve](images/roc_curve.png)
+![ROC Curve](https://github.com/yanheinaung23-eng/Codveda-Data-Analysis-Internship-Projects/blob/669f984704ca74594d0d4a071b68e46ce8b48f36/03_level_task_project/Images/roc_curve.png)
+
+---
 
 ### 13. Comparing All Models
 
@@ -399,52 +402,17 @@ joblib.dump(best_rf_model, "customer_churn_prediction_random_forest_model.pkl")
 
 **Tuned Random Forest** is the final model — it keeps the accuracy and ROC AUC of the default Random Forest while catching significantly more actual churners (73% recall vs. 55%), which is the metric that matters most for a retention use case.
 
+---
+
 ## Business Insights
 
 - **Customer service calls is the single strongest churn signal.** Customers who call support often are at meaningfully higher risk of leaving — a natural trigger for proactive outreach rather than waiting for a cancellation request.
+  
 - **Day-time usage and charges matter a lot.** High day-minute, high day-charge customers churn more, which points toward price sensitivity during peak-usage hours as a lever worth investigating (e.g. loyalty pricing or usage-based offers).
+  
 - **Having an international plan is a meaningful predictor** (the "Yes"/"No" split together rank among the top 5 features), suggesting the plan's pricing or value proposition may not be landing the way it should for a chunk of subscribers.
 
-## How to Run
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/<your-username>/customer-churn-prediction.git
-cd customer-churn-prediction
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Place the dataset
-#    Put churn-bigml-80.csv inside a "datasets/" folder in the project root
-
-# 4. Run the notebook
-jupyter notebook customer_churn_prediction.ipynb
-```
-
-## Project Structure
-
-```
-customer-churn-prediction/
-├── datasets/
-│   └── churn-bigml-80.csv
-├── images/
-│   ├── feature_importance.png
-│   ├── confusion_matrix.png
-│   └── roc_curve.png
-├── customer_churn_prediction.ipynb
-├── customer_churn_prediction_random_forest_model.pkl
-├── requirements.txt
-└── README.md
-```
-
-## Future Improvements
-
-- Handle class imbalance directly with **SMOTE** or similar resampling, rather than relying only on `class_weight`
-- Try gradient-boosted models (**XGBoost**, **LightGBM**) as an accuracy/recall upgrade over Random Forest
-- Add **SHAP** values for per-customer, not just global, explainability
-- Wrap the saved pipeline in a small **Streamlit** app or **API** for live predictions
-- Nested cross-validation to get a less optimistic estimate of generalization performance
+---
 
 ## Author
 
