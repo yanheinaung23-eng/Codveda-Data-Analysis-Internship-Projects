@@ -10,10 +10,10 @@ Each project folder contains its own detailed `README.md` with full methodology,
  
 | Level | Task(s) | Project | What it demonstrates | Explore |
 |:---:|:---:|---|---|:---:|
-| 1 | 1 & 2 | [Data Cleaning & EDA — Iris Dataset](01_level_task_projects) | Data quality checks, statistical summaries, correlation analysis, visualization | [📂 View](01_level_task_projects) · [📓 Notebook](01_level_task_projects/data_cleaning_and_EDA.ipynb) |
-| 2 | 3 | [Regression Analysis — Stock Price Prediction](02_level_task_projects/01_regression_analysis_project) | Supervised ML, Linear Regression, model evaluation, model persistence | [📂 View](02_level_task_projects/01_regression_analysis_project) · [📓 Notebook](02_level_task_projects/01_regression_analysis_project/01_linear_regression_stock_model.ipynb) |
-| 2 | 4 | [Time Series Analysis — Stock Closing Prices](02_level_task_projects/02_time_series_analysis_project) | Trend/seasonality decomposition, moving averages, market behavior interpretation | [📂 View](02_level_task_projects/02_time_series_analysis_project) · [📓 Notebook](02_level_task_projects/02_time_series_analysis_project/02_time_series_analysis.ipynb) |
-| 3 | 5 | [Customer Churn Prediction](03_level_task_project) | End-to-end ML pipeline, model comparison, hyperparameter tuning, business insights | [📂 View](03_level_task_project) · [📓 Notebook](03_level_task_project/task_5_customer_churn_prediction.ipynb) |
+| 1 | 1 & 2 | [Data Cleaning & EDA — Iris Dataset](01_level_task_projects) | Data quality checks, statistical summaries, correlation analysis, visualization | [📓 Notebook](01_level_task_projects/data_cleaning_and_EDA.ipynb) |
+| 2 | 3 | [Regression Analysis — Stock Price Prediction](02_level_task_projects/01_regression_analysis_project) | Supervised ML, Linear Regression, model evaluation, model persistence | [📓 Notebook](02_level_task_projects/01_regression_analysis_project/01_linear_regression_stock_model.ipynb) |
+| 2 | 4 | [Time Series Analysis — Stock Closing Prices](02_level_task_projects/02_time_series_analysis_project) | Trend/seasonality decomposition, moving averages, market behavior interpretation | [📓 Notebook](02_level_task_projects/02_time_series_analysis_project/02_time_series_analysis.ipynb) |
+| 3 | 5 | [Customer Churn Prediction](03_level_task_project) | End-to-end ML pipeline, model comparison, hyperparameter tuning, business insights | [📓 Notebook](03_level_task_project/task_5_customer_churn_prediction.ipynb) |
  
 ---
  
